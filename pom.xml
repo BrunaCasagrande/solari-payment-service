@@ -5,17 +5,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.solari</groupId>
-	<artifactId>solari-client-service</artifactId>
+	<artifactId>solari-payment-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Solari - Client Service</name>
-	<description>Microservice responsible for managing customers in the Solari system</description>
+	<name>Solari - Payment Service</name>
+	<description>Microservice responsible for managing payments in the Solari system</description>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>3.3.2</version> <!-- última versão estável -->
+				<version>3.3.2</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
