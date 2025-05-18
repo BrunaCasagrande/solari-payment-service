@@ -4,5 +4,5 @@ import br.com.solari.application.domain.Payment;
 
 public interface PaymentProcessor {
 
-    Payment processPayment(String token);
+  Payment processPayment(String token);
 }

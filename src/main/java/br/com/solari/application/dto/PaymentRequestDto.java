@@ -10,6 +10,6 @@ import lombok.*;
 @AllArgsConstructor
 public class PaymentRequestDto {
 
-    @NotBlank(message = "Payment token is required")
-    private String token;
+  @NotBlank(message = "Payment token is required")
+  private String token;
 }

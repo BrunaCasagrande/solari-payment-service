@@ -5,10 +5,9 @@ import br.com.solari.application.domain.exception.ErrorDetail;
 import jakarta.validation.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.*;
-
 import java.util.List;
 import java.util.Set;
+import lombok.*;
 
 @Getter
 @Setter
@@ -28,12 +27,9 @@ public class Payment {
   @NotNull(message = "Payment method is required")
   private PaymentMethod method;
 
-  public static Payment createPayment(final String token, final PaymentStatus status, final PaymentMethod method) {
-    final var payment = Payment.builder()
-            .token(token)
-            .status(status)
-            .method(method)
-            .build();
+  public static Payment createPayment(
+      final String token, final PaymentStatus status, final PaymentMethod method) {
+    final var payment = Payment.builder().token(token).status(status).method(method).build();
 
     validate(payment);
 
@@ -46,11 +42,12 @@ public class Payment {
     final Set<ConstraintViolation<Payment>> violations = validator.validate(payment);
 
     if (!violations.isEmpty()) {
-      final List<ErrorDetail> errors = violations.stream()
-              .map(v -> new ErrorDetail(
-                      v.getPropertyPath().toString(),
-                      v.getMessage(),
-                      v.getInvalidValue()))
+      final List<ErrorDetail> errors =
+          violations.stream()
+              .map(
+                  v ->
+                      new ErrorDetail(
+                          v.getPropertyPath().toString(), v.getMessage(), v.getInvalidValue()))
               .toList();
 
       throw new DomainException(errors.get(0).errorMessage(), "domain_exception", errors);

@@ -9,13 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class MercadoPagoMockAdapter implements PaymentProcessor {
 
-    @Override
-    public Payment processPayment(String token) {
+  @Override
+  public Payment processPayment(String token) {
 
-        return Payment.createPayment(
-                token,
-                PaymentStatus.APPROVED,
-                PaymentMethod.CREDIT_CARD
-        );
-    }
+    return Payment.createPayment(token, PaymentStatus.APPROVED, PaymentMethod.CREDIT_CARD);
+  }
 }

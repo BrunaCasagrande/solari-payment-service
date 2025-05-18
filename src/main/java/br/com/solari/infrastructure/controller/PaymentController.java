@@ -4,11 +4,10 @@ import br.com.solari.application.domain.Payment;
 import br.com.solari.application.dto.PaymentRequestDto;
 import br.com.solari.application.usecase.CreatePayment;
 import jakarta.validation.Valid;
+import java.net.URI;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.net.URI;
 
 @RestController
 @RequestMapping("/solari/v1/payments")
